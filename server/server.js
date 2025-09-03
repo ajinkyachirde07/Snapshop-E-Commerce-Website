@@ -19,7 +19,7 @@ const commonFeatureRouter = require("./routes/common/feature-routes");
 //create a separate file for this and then import/use that file here
 
 mongoose
-  .connect("db_url")
+  .connect("mongodb+srv://ajinkyachirde07_db_user:Wo0RAcvvTzj9JdFn@cluster0.gjbtdy1.mongodb.net")
   .then(() => console.log("MongoDB connected"))
   .catch((error) => console.log(error));
 
@@ -27,7 +27,8 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 app.use(
-  cors({
+  cors({ 
+
     origin: "http://localhost:5173",
     methods: ["GET", "POST", "DELETE", "PUT"],
     allowedHeaders: [
