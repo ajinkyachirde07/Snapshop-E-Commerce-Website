@@ -10,7 +10,7 @@ export const getSearchResults = createAsyncThunk(
   "/order/getSearchResults",
   async (keyword) => {
     const response = await axios.get(
-      `http://snapshop-grss.onrender.com/api/shop/search/${keyword}`
+      `https://snapshop-grss.onrender.com/api/shop/search/${keyword}`
     );
 
     return response.data;
