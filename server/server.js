@@ -30,23 +30,14 @@ const PORT = process.env.PORT || 5000;
 
 
 
-
 const allowedOrigins = [
   "http://localhost:5173", // local dev
   "https://snapshop-zeta.vercel.app" // vercel prod
 ];
 
-app.use(cors({
-  origin: allowedOrigins,
-  credentials: true, // if using cookies/auth headers
-}));
-
-
-
 app.use(
-  cors({ 
-    origin:"https://snapshop-zeta.vercel.app",  
-    origin:"http://localhost:5173",
+  cors({
+    origin: allowedOrigins,
     methods: ["GET", "POST", "DELETE", "PUT"],
     allowedHeaders: [
       "Content-Type",
@@ -58,6 +49,7 @@ app.use(
     credentials: true,
   })
 );
+
 
 app.use(cookieParser());
 app.use(express.json());
