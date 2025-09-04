@@ -68,7 +68,7 @@ const loginUser = async (req, res) => {
       { expiresIn: "60m" }
     );
 
-    res.cookie("token", token, { httpOnly: true, secure: false }).json({
+    res.cookie("token", token, { httpsOnly: true, secure: false }).json({
       success: true,
       message: "Logged in successfully",
       user: {
@@ -106,7 +106,7 @@ const authMiddleware = async (req, res, next) => {
     });
 
   try {
-    const decoded = jwt.verify(token, "CLIENT_SECRET_KEY");
+    const decoded = jwt.verify(token, "ajinkya");
     req.user = decoded;
     next();
   } catch (error) {
