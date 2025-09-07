@@ -31,7 +31,7 @@ const PORT = process.env.PORT || 5000;
 
 
 const allowedOrigins = [
-  "http://localhost:5173", // local dev
+   // local dev
   "https://snapshop-zeta.vercel.app" // vercel prod
 ];
 
